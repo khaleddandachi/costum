@@ -1,0 +1,1143 @@
+/**
+ * MADAR — مَدار | Product Catalog Data (file:// & HTTP compatible)
+ * Mirrors data/products.json so index.html works by direct double-click without fetch() CORS issues.
+ */
+window.MADAR_PRODUCTS = [
+  {
+    "id": "m-01",
+    "category": "men",
+    "name_ar": "جاكيت جلد أسود كلاسيكي بسحّاب",
+    "name_en": "Classic Black Biker Leather Jacket",
+    "desc_ar": "جاكيت جلد فاخر بقصّة بايكر عصرية وسحّابات معدنية متينة، مثالي للأمسيات الخريفية والشتوية.",
+    "desc_en": "Sleek black faux-leather biker jacket with structured lapels and metallic zip accents for sharp day-to-night styling.",
+    "price_usd": 58,
+    "old_price_usd": 75,
+    "badges": ["bestseller", "sale"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": [
+      { "name_ar": "أسود فحمي", "name_en": "Jet Black", "hex": "#161618", "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&h=1000&q=85" },
+      { "name_ar": "أسود مطفي", "name_en": "Matte Onyx", "hex": "#2A2B30", "image": "https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=800&h=1000&q=85" }
+    ],
+    "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&h=1000&q=85",
+      "https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 48,
+    "created_order": 46
+  },
+  {
+    "id": "m-02",
+    "category": "men",
+    "name_ar": "جاكيت ديمين أزرق غسيل فاتح",
+    "name_en": "Vintage Light-Wash Denim Jacket",
+    "desc_ar": "جاكيت جينز رجالي قطني 100% بغسيل أزرق فاتح ولمسة كاجوال مريحة تناسب كل المواسم.",
+    "desc_en": "100% cotton trucker denim jacket finished in a sun-faded light wash for effortless layering over tees and hoodies.",
+    "price_usd": 42,
+    "old_price_usd": null,
+    "badges": ["new"],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": [
+      { "name_ar": "أزرق ديمين فاتح", "name_en": "Light Indigo", "hex": "#6E95B8" },
+      { "name_ar": "أزرق غامق", "name_en": "Deep Rinse", "hex": "#263B59" }
+    ],
+    "image": "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.8,
+    "reviews_count": 31,
+    "created_order": 44
+  },
+  {
+    "id": "m-03",
+    "category": "men",
+    "name_ar": "جاكيت بومبر تيراكوتا بسحّاب",
+    "name_en": "Terracotta Minimalist Bomber Jacket",
+    "desc_ar": "جاكيت بومبر خفيف بلون تيراكوتا دافئ وقصّة شبابية أنيقة مع أساور مطاطية مريحة.",
+    "desc_en": "Lightweight matte-finish bomber jacket in warm Mediterranean terracotta with ribbed cuffs and clean zip closure.",
+    "price_usd": 39,
+    "old_price_usd": 52,
+    "badges": ["new", "sale"],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": [
+      { "name_ar": "تيراكوتا", "name_en": "Terracotta", "hex": "#B96D53" },
+      { "name_ar": "أسود", "name_en": "Obsidian", "hex": "#1B1C20" }
+    ],
+    "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 27,
+    "created_order": 45
+  },
+  {
+    "id": "m-04",
+    "category": "men",
+    "name_ar": "بليزر كحلي رسمي بقصّة مفصّلة",
+    "name_en": "Tailored Midnight Navy Suit Blazer",
+    "desc_ar": "بليزر رسمي بقصّة سليم فيت أنيقة من قماش فاخر يناسب الاجتماعات والمناسبات الخاصة.",
+    "desc_en": "Sharp single-breasted midnight navy blazer tailored for a structured silhouette across business and formal events.",
+    "price_usd": 64,
+    "old_price_usd": null,
+    "badges": ["bestseller"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": [
+      { "name_ar": "كحلي ليلي", "name_en": "Midnight Navy", "hex": "#152238", "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&h=1000&q=85" },
+      { "name_ar": "أزرق ملكي", "name_en": "Royal Blue", "hex": "#1D3B73", "image": "https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=800&h=1000&q=85" }
+    ],
+    "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&h=1000&q=85",
+      "https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 39,
+    "created_order": 40
+  },
+  {
+    "id": "m-05",
+    "category": "men",
+    "name_ar": "تيشيرت قطن أبيض أساسي فاخر",
+    "name_en": "Essential Pure White Cotton T-Shirt",
+    "desc_ar": "تيشيرت رجالي من القطن الصافي الممشط بملمس ناعم وقصّة متقنة للإطلالات اليومية.",
+    "desc_en": "Ultra-soft combed cotton crewneck t-shirt cut with a clean modern drape for everyday versatility.",
+    "price_usd": 14,
+    "old_price_usd": null,
+    "badges": ["bestseller"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": [
+      { "name_ar": "أبيض نقي", "name_en": "Pure White", "hex": "#F7F7F5" },
+      { "name_ar": "أسود", "name_en": "Charcoal Black", "hex": "#1C1D20" },
+      { "name_ar": "رمادي", "name_en": "Heather Gray", "hex": "#9CA3AF" }
+    ],
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.8,
+    "reviews_count": 64,
+    "created_order": 35
+  },
+  {
+    "id": "m-06",
+    "category": "men",
+    "name_ar": "قميص قطن أزرق منقط بأكمام طويلة",
+    "name_en": "Indigo Micro-Dot Cotton Button Shirt",
+    "desc_ar": "قميص رجالي قطني بلون أزرق نيلي ونقشة نقاط بيضاء ناعمة لإطلالة سمارت كاجوال مميزة.",
+    "desc_en": "Breathable indigo cotton button-down patterned with subtle micro-dots for polished smart-casual outfits.",
+    "price_usd": 26,
+    "old_price_usd": 34,
+    "badges": ["sale"],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": [
+      { "name_ar": "نيلي منقّط", "name_en": "Indigo Dot", "hex": "#3B5B7C" },
+      { "name_ar": "أبيض", "name_en": "Ivory", "hex": "#F1EFEA" }
+    ],
+    "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.7,
+    "reviews_count": 22,
+    "created_order": 32
+  },
+  {
+    "id": "m-07",
+    "category": "men",
+    "name_ar": "قميص أوكسفورد كلاسيكي بألوان مختارة",
+    "name_en": "Classic Tailored Oxford Dress Shirt",
+    "desc_ar": "قميص أوكسفورد عالي الجودة بياقة متماسكة متوفر بالعنابي، العاجي والرمادي الفحمي.",
+    "desc_en": "Crisp woven Oxford button-down shirt crafted in rich burgundy, crisp ivory, and slate gray.",
+    "price_usd": 28,
+    "old_price_usd": null,
+    "badges": ["new"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": [
+      { "name_ar": "عنابي", "name_en": "Burgundy", "hex": "#5E172E" },
+      { "name_ar": "عاجي", "name_en": "Ivory", "hex": "#EFECE6" },
+      { "name_ar": "رمادي فحمي", "name_en": "Slate Gray", "hex": "#5B606A" }
+    ],
+    "image": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 35,
+    "created_order": 41
+  },
+  {
+    "id": "m-08",
+    "category": "men",
+    "name_ar": "بنطال جينز مستقيم كلاسيكي",
+    "name_en": "Classic Straight-Fit Denim Jeans",
+    "desc_ar": "جينز رجالي متين بقصّة مستقيمة مريحة متوفر بعدة درجات من الأسود إلى الأزرق الكلاسيكي.",
+    "desc_en": "Durable mid-weight straight-fit denim crafted with subtle stretch for all-day movement and comfort.",
+    "price_usd": 32,
+    "old_price_usd": null,
+    "badges": ["bestseller"],
+    "sizes": ["30", "32", "34", "36", "38"],
+    "colors": [
+      { "name_ar": "أسود ديمين", "name_en": "Washed Black", "hex": "#232428", "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=800&h=1000&q=85" },
+      { "name_ar": "نيلي داكن", "name_en": "Raw Indigo", "hex": "#253447", "image": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=800&h=1000&q=85" }
+    ],
+    "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=800&h=1000&q=85",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.8,
+    "reviews_count": 51,
+    "created_order": 30
+  },
+  {
+    "id": "m-09",
+    "category": "men",
+    "name_ar": "بنطال كارغو فحمي بجيوب جانبية",
+    "name_en": "Charcoal Utility Cargo Trousers",
+    "desc_ar": "بنطال كارغو رجالي بلون رمادي فحمي وقماش عملي متين مع جيوب جانبية عصرية.",
+    "desc_en": "Tapered charcoal utility cargo pants cut from heavyweight cotton twill with articulated pockets.",
+    "price_usd": 34,
+    "old_price_usd": 44,
+    "badges": ["sale"],
+    "sizes": ["30", "32", "34", "36"],
+    "colors": [
+      { "name_ar": "فحمي داكن", "name_en": "Dark Charcoal", "hex": "#2F3234" },
+      { "name_ar": "زيتوني", "name_en": "Olive Drab", "hex": "#4B5338" }
+    ],
+    "image": "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.7,
+    "reviews_count": 19,
+    "created_order": 36
+  },
+  {
+    "id": "m-10",
+    "category": "men",
+    "name_ar": "هودي قطني رمادي مبطن دافئ",
+    "name_en": "Heather Gray Heavyweight Fleece Hoodie",
+    "desc_ar": "هودي شتوي مريح من القطن الثقيل المبطن بالصوف الناعم بقبعة مزدوجة وقصّة ستريت وير.",
+    "desc_en": "Cozy brushed-fleece pullover hoodie in timeless heather gray with a structured double-lined hood.",
+    "price_usd": 30,
+    "old_price_usd": null,
+    "badges": ["new"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": [
+      { "name_ar": "رمادي فاتح", "name_en": "Heather Gray", "hex": "#A9B0B7" },
+      { "name_ar": "أسود", "name_en": "Black", "hex": "#191A1D" },
+      { "name_ar": "كحلي", "name_en": "Navy", "hex": "#1E304E" }
+    ],
+    "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.8,
+    "reviews_count": 42,
+    "created_order": 42
+  },
+
+  {
+    "id": "w-01",
+    "category": "women",
+    "name_ar": "فستان ميدي أحمر مورد مع حزام خصر",
+    "name_en": "Crimson Floral Belted Midi Dress",
+    "desc_ar": "فستان صيفي حيوي بلون أحمر قرمزي ونقشة زهور ناعمة مع حزام يبرز أناقة الخصر.",
+    "desc_en": "Vibrant crimson floral-print midi dress with a cinched statement belt and flowing feminine skirt.",
+    "price_usd": 38,
+    "old_price_usd": 49,
+    "badges": ["bestseller", "sale"],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "colors": [
+      { "name_ar": "أحمر قرمزي", "name_en": "Crimson Floral", "hex": "#C81D25" },
+      { "name_ar": "مرجاني", "name_en": "Coral Rose", "hex": "#E05A5A" }
+    ],
+    "image": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 56,
+    "created_order": 45
+  },
+  {
+    "id": "w-02",
+    "category": "women",
+    "name_ar": "فستان سهرة طويل أحمر انسيابي",
+    "name_en": "Scarlet Flowing Satin Evening Gown",
+    "desc_ar": "فستان سهرة فاخر بتنورة واسعة انسيابية تمنحك حضوراً ساحراً في الأعراس والمناسبات.",
+    "desc_en": "Show-stopping full-length scarlet evening gown with sweeping drape designed for weddings and galas.",
+    "price_usd": 68,
+    "old_price_usd": 85,
+    "badges": ["sale"],
+    "sizes": ["XS", "S", "M", "L"],
+    "colors": [
+      { "name_ar": "أحمر قاني", "name_en": "Scarlet Red", "hex": "#B90E1A" },
+      { "name_ar": "برقوقي داكن", "name_en": "Deep Plum", "hex": "#4A154B" }
+    ],
+    "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 5.0,
+    "reviews_count": 34,
+    "created_order": 43
+  },
+  {
+    "id": "w-03",
+    "category": "women",
+    "name_ar": "فستان صيفي أبيض بأكتاف مكشوفة وكشكش",
+    "name_en": "Ivory Off-Shoulder Ruffle Mini Dress",
+    "desc_ar": "فستان صيفي أبيض خفيف ومريح بتصميم كشكش ناعم مثالي للأيام المشمسة والرحلات الساحلية.",
+    "desc_en": "Breezy ivory off-shoulder cotton mini dress accented with airy tiered ruffles for Mediterranean summer days.",
+    "price_usd": 32,
+    "old_price_usd": null,
+    "badges": ["new"],
+    "sizes": ["XS", "S", "M", "L"],
+    "colors": [
+      { "name_ar": "أبيض عاجي", "name_en": "Ivory White", "hex": "#F5F2EB" },
+      { "name_ar": "أزرق سماوي", "name_en": "Sky Pastel", "hex": "#BFD7EA" }
+    ],
+    "image": "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.8,
+    "reviews_count": 29,
+    "created_order": 44
+  },
+  {
+    "id": "w-04",
+    "category": "women",
+    "name_ar": "معطف ترنش طويل أزرق سماوي أنيق",
+    "name_en": "Sky Blue Tailored Long Trench Coat",
+    "desc_ar": "معطف طويل بلون أزرق سماوي راقٍ وقصّة محتشمة عصرية تضيف فخامة لإطلالاتك الخريفية والشتوية.",
+    "desc_en": "Refined longline sky-blue trench coat offering graceful modest layering with crisp architectural lapels.",
+    "price_usd": 59,
+    "old_price_usd": null,
+    "badges": ["new", "bestseller"],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": [
+      { "name_ar": "أزرق سماوي", "name_en": "Sky Blue", "hex": "#7FA9C9" },
+      { "name_ar": "بيج رملي", "name_en": "Sand Beige", "hex": "#D5C3AA" }
+    ],
+    "image": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 41,
+    "created_order": 46
+  },
+  {
+    "id": "w-05",
+    "category": "women",
+    "name_ar": "بنطال نسائي وردي ناعم بخصر عالٍ",
+    "name_en": "Blush Rose High-Waist Tapered Trousers",
+    "desc_ar": "بنطال أنيق بلون وردي هادئ وخصر مرتفع مع جيوب أمامية وقصّة مريحة للعمل والمشاوير اليومية.",
+    "desc_en": "Soft blush-rose high-rise tapered trousers tailored with clean front utility pockets and ankle cuffs.",
+    "price_usd": 29,
+    "old_price_usd": null,
+    "badges": ["new"],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "colors": [
+      { "name_ar": "وردي هادئ", "name_en": "Blush Rose", "hex": "#C99A96" },
+      { "name_ar": "بيج كريمي", "name_en": "Warm Cream", "hex": "#E3D6C6" }
+    ],
+    "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.7,
+    "reviews_count": 23,
+    "created_order": 37
+  },
+  {
+    "id": "w-06",
+    "category": "women",
+    "name_ar": "بلوزة بيضاء مطرّزة بالزهور مع ربطة",
+    "name_en": "White Embroidered Daisy Tie-Front Blouse",
+    "desc_ar": "بلوزة قطنية بيضاء مطرزة بزهور الأقحوان الربيعية وربطة أمامية ناعمة لإطلالة مشرقة.",
+    "desc_en": "Crisp white cotton short-sleeve blouse delicately embroidered with botanical daisies and a feminine tie hem.",
+    "price_usd": 24,
+    "old_price_usd": 30,
+    "badges": ["sale"],
+    "sizes": ["XS", "S", "M", "L"],
+    "colors": [
+      { "name_ar": "أبيض مطرّز", "name_en": "Embroidered White", "hex": "#F8F8F4" }
+    ],
+    "image": "https://images.unsplash.com/photo-1564257631407-4deb1f99d992?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1564257631407-4deb1f99d992?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.8,
+    "reviews_count": 26,
+    "created_order": 34
+  },
+  {
+    "id": "w-07",
+    "category": "women",
+    "name_ar": "تنورة ميدي بليسيه شامبانيا",
+    "name_en": "Champagne Pleated Midi Skirt",
+    "desc_ar": "تنورة بليسيه متوسطة الطول بلون شامبانيا راقٍ تنسدل بنعومة مع القمصان والبلوزات الكلاسيكية.",
+    "desc_en": "Fluid knife-pleated midi skirt in warm champagne-taupe that glides effortlessly from office to evening.",
+    "price_usd": 31,
+    "old_price_usd": null,
+    "badges": ["bestseller"],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "colors": [
+      { "name_ar": "شامبانيا", "name_en": "Champagne", "hex": "#B59C7E" },
+      { "name_ar": "أسود", "name_en": "Black", "hex": "#1B1B1E" }
+    ],
+    "image": "https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 37,
+    "created_order": 39
+  },
+  {
+    "id": "w-08",
+    "category": "women",
+    "name_ar": "طقم قميص مقلّم مع تنورة سوداء واسعة",
+    "name_en": "Striped Shirt & Black Flared Skirt Set",
+    "desc_ar": "إطلالة متكاملة تجمع بين القميص المقلّم الكلاسيكي والتنورة السوداء الواسعة بخصر عالٍ.",
+    "desc_en": "Polished monochrome pairing featuring a crisp vertical-stripe button shirt and high-waist black flared skirt.",
+    "price_usd": 44,
+    "old_price_usd": 55,
+    "badges": ["sale"],
+    "sizes": ["XS", "S", "M", "L"],
+    "colors": [
+      { "name_ar": "أسود وأبيض", "name_en": "Monochrome Black", "hex": "#1A1A1D" }
+    ],
+    "image": "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.8,
+    "reviews_count": 21,
+    "created_order": 31
+  },
+  {
+    "id": "w-09",
+    "category": "women",
+    "name_ar": "جاكيت كاجوال زيتوني أوفرسايز",
+    "name_en": "Olive Oversized Utility Field Jacket",
+    "desc_ar": "جاكيت نسائي بقصّة واسعة عصرية ولون زيتوني مميز مع جيوب كبيرة مثالي للأجواء الانتقالية.",
+    "desc_en": "Relaxed oversized field jacket in earthy olive twill with generous patch pockets for cool street layering.",
+    "price_usd": 45,
+    "old_price_usd": null,
+    "badges": ["new"],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": [
+      { "name_ar": "أخضر زيتوني", "name_en": "Olive Green", "hex": "#4E4D32" },
+      { "name_ar": "كاكي فاتح", "name_en": "Warm Khaki", "hex": "#A89878" }
+    ],
+    "image": "https://images.unsplash.com/photo-1544022613-e87ca75a784a?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1544022613-e87ca75a784a?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 33,
+    "created_order": 42
+  },
+  {
+    "id": "w-10",
+    "category": "women",
+    "name_ar": "فستان كوكتيل برقوقي بأكتاف منسدلة",
+    "name_en": "Deep Plum Off-Shoulder Cocktail Dress",
+    "desc_ar": "فستان كوكتيل أنيق بلون برقوقي فاخر وقصّة تبرز الكتفين بإطلالة راقية للسهرات.",
+    "desc_en": "Sculpted off-shoulder cocktail dress in rich aubergine plum with a flattering figure-skimming silhouette.",
+    "price_usd": 52,
+    "old_price_usd": null,
+    "badges": ["bestseller"],
+    "sizes": ["XS", "S", "M", "L"],
+    "colors": [
+      { "name_ar": "برقوقي داكن", "name_en": "Deep Plum", "hex": "#4A1144" },
+      { "name_ar": "أسود ملكي", "name_en": "Midnight Black", "hex": "#16161A" }
+    ],
+    "image": "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 28,
+    "created_order": 38
+  },
+  {
+    "id": "w-11",
+    "category": "women",
+    "name_ar": "بليزر صوف كاروهات زمردي أوفرسايز",
+    "name_en": "Emerald Tartan Oversized Wool Blazer",
+    "desc_ar": "بليزر شتوي فاخر بنقشة كاروهات زمردية داكنة وقصّة أوفرسايز تمنحك لمسة أوروبية راقية.",
+    "desc_en": "Structured wool-blend oversized blazer tailored in dark emerald tartan plaid for crisp autumn-winter styling.",
+    "price_usd": 54,
+    "old_price_usd": 68,
+    "badges": ["new", "sale"],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": [
+      { "name_ar": "كاروهات زمردي", "name_en": "Emerald Plaid", "hex": "#12352C" }
+    ],
+    "image": "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 24,
+    "created_order": 41
+  },
+  {
+    "id": "w-12",
+    "category": "women",
+    "name_ar": "بلوزة أورجانزا وردي باستيل بأكمام منفوخة",
+    "name_en": "Blush Pink Puff-Sleeve Organza Blouse",
+    "desc_ar": "بلوزة حالمة بلون وردي باستيل من الأورجانزا الخفيف بأكمام منفوخة وتفاصيل كشكش ناعمة.",
+    "desc_en": "Romantic sheer-trimmed blush organza blouse featuring voluminous puff sleeves and airy ruffled accents.",
+    "price_usd": 33,
+    "old_price_usd": null,
+    "badges": ["new"],
+    "sizes": ["XS", "S", "M", "L"],
+    "colors": [
+      { "name_ar": "وردي باستيل", "name_en": "Pastel Blush", "hex": "#EBC4D0" },
+      { "name_ar": "أبيض لؤلؤي", "name_en": "Pearl White", "hex": "#F7F5F2" }
+    ],
+    "image": "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.8,
+    "reviews_count": 19,
+    "created_order": 40
+  },
+
+  {
+    "id": "k-01",
+    "category": "kids",
+    "name_ar": "جاكيت جينز أطفال كلاسيكي غسيل فاتح",
+    "name_en": "Kids Classic Light-Indigo Denim Jacket",
+    "desc_ar": "جاكيت ديمين ناعم ومرن للأطفال بقصّة مريحة تناسب اللعب والخروجات العائلية طوال العام.",
+    "desc_en": "Soft-washed indigo cotton denim jacket designed for everyday comfort, layering, and playful durability.",
+    "price_usd": 24,
+    "old_price_usd": 30,
+    "badges": ["bestseller", "sale"],
+    "sizes": ["4Y", "6Y", "8Y", "10Y", "12Y"],
+    "colors": [
+      { "name_ar": "أزرق ديمين فاتح", "name_en": "Light Indigo", "hex": "#7D9EC2" },
+      { "name_ar": "أزرق متوسط", "name_en": "Classic Blue", "hex": "#456A94" }
+    ],
+    "image": "assets/products/kids-denim-jacket.jpg",
+    "gallery": ["assets/products/kids-denim-jacket.jpg"],
+    "rating": 4.9,
+    "reviews_count": 38,
+    "created_order": 45
+  },
+  {
+    "id": "k-02",
+    "category": "kids",
+    "name_ar": "فستان بناتي قطني مورد بألوان الباستيل",
+    "name_en": "Girls Pastel Floral Cotton Sundress",
+    "desc_ar": "فستان صيفي مبهج للبنات من القطن الطبيعي 100% بنقشة زهور وردية وصفراء لطيفة.",
+    "desc_en": "Cheerful 100% breathable cotton summer dress printed with pastel pink and butter-yellow blossoms.",
+    "price_usd": 22,
+    "old_price_usd": null,
+    "badges": ["new", "bestseller"],
+    "sizes": ["3Y", "4Y", "6Y", "8Y", "10Y"],
+    "colors": [
+      { "name_ar": "وردي وأصفر مورد", "name_en": "Pastel Floral", "hex": "#F4B6C2" }
+    ],
+    "image": "assets/products/kids-floral-dress.jpg",
+    "gallery": ["assets/products/kids-floral-dress.jpg"],
+    "rating": 5.0,
+    "reviews_count": 44,
+    "created_order": 46
+  },
+  {
+    "id": "k-03",
+    "category": "kids",
+    "name_ar": "هودي أطفال كولور بلوك خردلي وكحلي",
+    "name_en": "Kids Mustard & Navy Colorblock Hoodie",
+    "desc_ar": "هودي قطني دافئ وعصري للأطفال بتصميم ثنائي اللون خردلي وكحلي مع جيب أمامي مريح.",
+    "desc_en": "Bold mustard-yellow and navy fleece colorblock hoodie with cozy kangaroo pocket and durable ribbing.",
+    "price_usd": 21,
+    "old_price_usd": null,
+    "badges": ["new"],
+    "sizes": ["4Y", "6Y", "8Y", "10Y", "12Y"],
+    "colors": [
+      { "name_ar": "خردلي وكحلي", "name_en": "Mustard / Navy", "hex": "#D99B26" },
+      { "name_ar": "رمادي وأزرق", "name_en": "Gray / Cobalt", "hex": "#4B6587" }
+    ],
+    "image": "assets/products/kids-hoodie-set.jpg",
+    "gallery": ["assets/products/kids-hoodie-set.jpg"],
+    "rating": 4.9,
+    "reviews_count": 29,
+    "created_order": 44
+  },
+  {
+    "id": "k-04",
+    "category": "kids",
+    "name_ar": "كارديجان صوف أطفال كريمي بضفائر",
+    "name_en": "Kids Cream Cable-Knit Button Cardigan",
+    "desc_ar": "كارديجان شتوي ناعم بلون كريمي دافئ وحياكة ضفائر أنيقة لطيف جداً على بشرة الأطفال.",
+    "desc_en": "Cozy cream chunky cable-knit cardigan with wooden-style buttons, ultra-soft for crisp seasonal layering.",
+    "price_usd": 25,
+    "old_price_usd": 32,
+    "badges": ["sale"],
+    "sizes": ["2Y", "4Y", "6Y", "8Y"],
+    "colors": [
+      { "name_ar": "كريمي دافئ", "name_en": "Warm Cream", "hex": "#ECE3D3" },
+      { "name_ar": "بيج شوفان", "name_en": "Oatmeal", "hex": "#CBB99F" }
+    ],
+    "image": "assets/products/kids-knit-cardigan.jpg",
+    "gallery": ["assets/products/kids-knit-cardigan.jpg"],
+    "rating": 4.9,
+    "reviews_count": 26,
+    "created_order": 39
+  },
+  {
+    "id": "k-05",
+    "category": "kids",
+    "name_ar": "قميص كتان ولادي أزرق سماوي صيفي",
+    "name_en": "Boys Sky-Blue Breathable Linen Shirt",
+    "desc_ar": "قميص كتان طبيعي خفيف بلون أزرق سماوي أنيق للمناسبات العائلية وأيام الصيف الحارة.",
+    "desc_en": "Airy Mediterranean sky-blue linen button-up shirt with roll-tab sleeves for smart warm-weather outings.",
+    "price_usd": 19,
+    "old_price_usd": null,
+    "badges": ["new"],
+    "sizes": ["4Y", "6Y", "8Y", "10Y", "12Y"],
+    "colors": [
+      { "name_ar": "أزرق سماوي", "name_en": "Sky Blue", "hex": "#8AB8D9" },
+      { "name_ar": "أبيض كتان", "name_en": "Linen White", "hex": "#F3F1EC" }
+    ],
+    "image": "assets/products/kids-linen-shirt.jpg",
+    "gallery": ["assets/products/kids-linen-shirt.jpg"],
+    "rating": 4.8,
+    "reviews_count": 21,
+    "created_order": 41
+  },
+  {
+    "id": "k-06",
+    "category": "kids",
+    "name_ar": "فيست مبطن مرجاني للأطفال مقاوم للهواء",
+    "name_en": "Kids Coral Quilted Puffer Vest",
+    "desc_ar": "جيليه مبطن خفيف الوزن ودافئ بلون مرجاني مشرق يمنح طفلك حرية الحركة في الأجواء الباردة.",
+    "desc_en": "Vibrant coral-orange insulated quilted puffer vest offering lightweight warmth and full play mobility.",
+    "price_usd": 23,
+    "old_price_usd": 29,
+    "badges": ["sale"],
+    "sizes": ["4Y", "6Y", "8Y", "10Y"],
+    "colors": [
+      { "name_ar": "مرجاني برتقالي", "name_en": "Vibrant Coral", "hex": "#EC5D43" },
+      { "name_ar": "كحلي", "name_en": "Navy Blue", "hex": "#1F304D" }
+    ],
+    "image": "assets/products/kids-puffer-vest.jpg",
+    "gallery": ["assets/products/kids-puffer-vest.jpg"],
+    "rating": 4.9,
+    "reviews_count": 25,
+    "created_order": 40
+  },
+  {
+    "id": "k-07",
+    "category": "kids",
+    "name_ar": "فستان مناسبات بناتي تول لافندر",
+    "name_en": "Girls Lavender Ruffled Tulle Party Dress",
+    "desc_ar": "فستان حفلات وأعياد ساحر للبنات من التول الناعم بلون اللافندر مع فيونكة ساتان أنيقة.",
+    "desc_en": "Dreamy soft-lavender layered tulle occasion dress finished with a delicate satin bow at the waist.",
+    "price_usd": 34,
+    "old_price_usd": null,
+    "badges": ["bestseller"],
+    "sizes": ["3Y", "4Y", "6Y", "8Y", "10Y"],
+    "colors": [
+      { "name_ar": "لافندر ناعم", "name_en": "Soft Lavender", "hex": "#C8B3E0" },
+      { "name_ar": "وردي فاتح", "name_en": "Ballet Pink", "hex": "#F1C6D3" }
+    ],
+    "image": "assets/products/kids-tulle-dress.jpg",
+    "gallery": ["assets/products/kids-tulle-dress.jpg"],
+    "rating": 5.0,
+    "reviews_count": 32,
+    "created_order": 43
+  },
+  {
+    "id": "k-08",
+    "category": "kids",
+    "name_ar": "طقم رياضي قطني للأطفال بلون أخضر نعناعي",
+    "name_en": "Kids Mint-Green Cotton Tracksuit Set",
+    "desc_ar": "طقم مكون من سويتشيرت وبنطال جوغر قطني مريح بلون أخضر نعناعي منعش للنادي والمدرسة.",
+    "desc_en": "Matching two-piece mint-green crewneck sweatshirt and elastic-waist joggers in super-soft cotton fleece.",
+    "price_usd": 26,
+    "old_price_usd": null,
+    "badges": ["new"],
+    "sizes": ["4Y", "6Y", "8Y", "10Y", "12Y"],
+    "colors": [
+      { "name_ar": "أخضر نعناعي", "name_en": "Fresh Mint", "hex": "#8AD1B2" },
+      { "name_ar": "أصفر ناعم", "name_en": "Butter Yellow", "hex": "#F2D679" }
+    ],
+    "image": "assets/products/kids-mint-tracksuit.jpg",
+    "gallery": ["assets/products/kids-mint-tracksuit.jpg"],
+    "rating": 4.9,
+    "reviews_count": 27,
+    "created_order": 45
+  },
+
+  {
+    "id": "s-01",
+    "category": "shoes",
+    "name_ar": "سنيكرز رياضي قرمزي خفيف للركض",
+    "name_en": "Crimson Knit Performance Runner Sneakers",
+    "desc_ar": "حذاء رياضي خفيف الوزن بنسيج شبكي يسمح بالتهوية ونعل مبطن مريح للمشي والرياضة.",
+    "desc_en": "Featherlight crimson knit running sneakers with responsive cushioned sole for gym sessions and city steps.",
+    "price_usd": 42,
+    "old_price_usd": 55,
+    "badges": ["bestseller", "sale"],
+    "sizes": ["39", "40", "41", "42", "43", "44", "45"],
+    "colors": [
+      { "name_ar": "أحمر قرمزي", "name_en": "Crimson Red", "hex": "#C8102E" },
+      { "name_ar": "أبيض وبرتقالي", "name_en": "White / Solar", "hex": "#F56E28", "image": "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?auto=format&fit=crop&w=800&h=1000&q=85" }
+    ],
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&h=1000&q=85",
+      "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 53,
+    "created_order": 46
+  },
+  {
+    "id": "s-02",
+    "category": "shoes",
+    "name_ar": "سنيكرز نسائي باستيل كولور بلوك بنعل مرتفع",
+    "name_en": "Pastel Colorblock Platform Sneakers",
+    "desc_ar": "سنيكرز عصري بألوان الباستيل المبهجة (ليلكي، أصفر ووردي) بنعل مريح يرفع إطلالتك.",
+    "desc_en": "Playful pastel lilac, butter-yellow, and blush leather-look low-top sneakers with a sculpted platform sole.",
+    "price_usd": 44,
+    "old_price_usd": null,
+    "badges": ["new", "bestseller"],
+    "sizes": ["36", "37", "38", "39", "40", "41"],
+    "colors": [
+      { "name_ar": "باستيل متعدد", "name_en": "Pastel Multi", "hex": "#D8C2F0" }
+    ],
+    "image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 47,
+    "created_order": 45
+  },
+  {
+    "id": "s-03",
+    "category": "shoes",
+    "name_ar": "بوت جلد بني برباط كلاسيكي",
+    "name_en": "Tan Leather Lace-Up Heritage Boots",
+    "desc_ar": "بوت رجالي متين من الجلد الطبيعي بلون بني دافئ مع نعل مقاوم للانزلاق لأيام الشتاء.",
+    "desc_en": "Rugged handcrafted tan leather lace-up boots with cushioned ankle support and traction rubber outsoles.",
+    "price_usd": 58,
+    "old_price_usd": null,
+    "badges": ["bestseller"],
+    "sizes": ["40", "41", "42", "43", "44", "45"],
+    "colors": [
+      { "name_ar": "بني جملي", "name_en": "Warm Tan", "hex": "#8B5E3C" },
+      { "name_ar": "بني إسبريسو", "name_en": "Espresso", "hex": "#3E2723" }
+    ],
+    "image": "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.8,
+    "reviews_count": 31,
+    "created_order": 38
+  },
+  {
+    "id": "s-04",
+    "category": "shoes",
+    "name_ar": "حذاء كعب عالٍ بنقشة زهور زرقاء فنية",
+    "name_en": "Botanical Cobalt Stiletto High Heels",
+    "desc_ar": "حذاء سهرة نسائي بكعب رفيع ومقدمة مدببة مطبوع بزهور زرقاء زاهية لإطلالة جريئة.",
+    "desc_en": "Statement pointed-toe stiletto heels wrapped in artistic cobalt-blue botanical florals for standout nights.",
+    "price_usd": 46,
+    "old_price_usd": 58,
+    "badges": ["sale"],
+    "sizes": ["36", "37", "38", "39", "40"],
+    "colors": [
+      { "name_ar": "أزرق مورد", "name_en": "Cobalt Floral", "hex": "#1B5EBF" }
+    ],
+    "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.8,
+    "reviews_count": 22,
+    "created_order": 36
+  },
+  {
+    "id": "s-05",
+    "category": "shoes",
+    "name_ar": "سنيكرز أبيض وبرتقالي شمسي بنعل هوائي",
+    "name_en": "White & Solar Orange Air Runners",
+    "desc_ar": "حذاء رياضي يجمع بين الأبيض النقي ولمسات البرتقالي الشمسي مع وسادة هوائية مريحة.",
+    "desc_en": "Crisp white everyday sneakers energized with solar-orange accents and air-cushioned heel comfort.",
+    "price_usd": 45,
+    "old_price_usd": null,
+    "badges": ["new"],
+    "sizes": ["38", "39", "40", "41", "42", "43", "44"],
+    "colors": [
+      { "name_ar": "أبيض وبرتقالي", "name_en": "White / Solar Orange", "hex": "#FF6A2B" }
+    ],
+    "image": "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 36,
+    "created_order": 44
+  },
+  {
+    "id": "s-06",
+    "category": "shoes",
+    "name_ar": "سنيكرز شمواه جملي وأسود ستريت وير",
+    "name_en": "Camel Suede Street Low Sneakers",
+    "desc_ar": "سنيكرز عصري بخامة الشمواه الجملي الدافئ مع ياقة سوداء ونعل أبيض متين.",
+    "desc_en": "Street-ready low-top sneakers crafted in rich camel suede with contrast matte black collar and crisp sole.",
+    "price_usd": 48,
+    "old_price_usd": null,
+    "badges": ["bestseller"],
+    "sizes": ["39", "40", "41", "42", "43", "44"],
+    "colors": [
+      { "name_ar": "جملي وأسود", "name_en": "Camel / Black", "hex": "#B47A48" }
+    ],
+    "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 41,
+    "created_order": 42
+  },
+  {
+    "id": "s-07",
+    "category": "shoes",
+    "name_ar": "سنيكرز قماش عنابي كلاسيكي سكيت",
+    "name_en": "Burgundy Canvas Classic Skate Sneakers",
+    "desc_ar": "حذاء قماشي مريح بلون عنابي عميق وخط جانبي أبيض يناسب الإطلالات الشبابية اليومية.",
+    "desc_en": "Timeless low-profile burgundy canvas skate sneakers with vulcanized white soles and contrast side stripe.",
+    "price_usd": 32,
+    "old_price_usd": 40,
+    "badges": ["sale"],
+    "sizes": ["37", "38", "39", "40", "41", "42", "43", "44"],
+    "colors": [
+      { "name_ar": "عنابي", "name_en": "Deep Burgundy", "hex": "#661829" },
+      { "name_ar": "أسود", "name_en": "Classic Black", "hex": "#18181A" }
+    ],
+    "image": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.8,
+    "reviews_count": 45,
+    "created_order": 35
+  },
+  {
+    "id": "s-08",
+    "category": "shoes",
+    "name_ar": "سنيكرز ريترو شانكي بألوان متناغمة",
+    "name_en": "Retro Multicolor Chunky Sneakers",
+    "desc_ar": "سنيكرز جريء بتصميم ريترو وألوان كريمي وتركواز ومرجاني لإطلالة عصرية لافتة.",
+    "desc_en": "Bold retro-inspired chunky sneakers mixing cream, teal, and coral panels with sculpted comfort soles.",
+    "price_usd": 46,
+    "old_price_usd": null,
+    "badges": ["new"],
+    "sizes": ["36", "37", "38", "39", "40", "41", "42"],
+    "colors": [
+      { "name_ar": "متعدد الألوان", "name_en": "Cream Multi", "hex": "#E3C8B2" }
+    ],
+    "image": "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 29,
+    "created_order": 43
+  },
+  {
+    "id": "s-09",
+    "category": "shoes",
+    "name_ar": "حذاء رسمي جلد بني إسبريسو بإبزيم مزدوج",
+    "name_en": "Espresso Double-Monk Leather Dress Shoes",
+    "desc_ar": "حذاء رجالي رسمي فاخر من الجلد المصقول بإبزيم مزدوج يضفي فخامة فائقة على البدلات.",
+    "desc_en": "Polished dark espresso leather double-monk strap dress shoes handcrafted for weddings and executive wear.",
+    "price_usd": 55,
+    "old_price_usd": null,
+    "badges": ["bestseller"],
+    "sizes": ["40", "41", "42", "43", "44", "45"],
+    "colors": [
+      { "name_ar": "بني إسبريسو", "name_en": "Espresso Brown", "hex": "#4B3222", "image": "https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=800&h=1000&q=85" },
+      { "name_ar": "كونياك", "name_en": "Cognac Tan", "hex": "#7E3F1E", "image": "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=800&h=1000&q=85" }
+    ],
+    "image": "https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=800&h=1000&q=85",
+      "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 33,
+    "created_order": 37
+  },
+
+  {
+    "id": "a-01",
+    "category": "accessories",
+    "name_ar": "حقيبة يد جلدية فاخرة بلون أحمر مرجاني",
+    "name_en": "Coral-Red Structured Leather Handbag",
+    "desc_ar": "حقيبة يد نسائية بتصميم هندسي أنيق ومقبض علوي وقفل معدني لامع تتسع لكافة مستلزماتك.",
+    "desc_en": "Sculpted coral-red leather top-handle handbag accented with gleaming metallic clasp and detachable strap.",
+    "price_usd": 42,
+    "old_price_usd": 54,
+    "badges": ["bestseller", "sale"],
+    "sizes": ["One Size"],
+    "colors": [
+      { "name_ar": "أحمر مرجاني", "name_en": "Coral Red", "hex": "#C84231", "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&h=1000&q=85" },
+      { "name_ar": "كراميل مجدول", "name_en": "Caramel Woven", "hex": "#C67D53", "image": "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&h=1000&q=85" }
+    ],
+    "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&h=1000&q=85",
+      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 49,
+    "created_order": 46
+  },
+  {
+    "id": "a-02",
+    "category": "accessories",
+    "name_ar": "حقيبة كروس سوداء مبطنة بحلية ذهبية",
+    "name_en": "Black Quilted Leather Crossbody Bag",
+    "desc_ar": "حقيبة كتف نسائية سوداء بتطريز مبطن كلاسيكي وإكسسوار ذهبي راقٍ مثالية للنهار والمساء.",
+    "desc_en": "Chevron-quilted black faux-leather crossbody bag with antique gold hardware and zippered main compartment.",
+    "price_usd": 36,
+    "old_price_usd": null,
+    "badges": ["bestseller"],
+    "sizes": ["One Size"],
+    "colors": [
+      { "name_ar": "أسود مبطن", "name_en": "Quilted Black", "hex": "#1B1B1E" }
+    ],
+    "image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 58,
+    "created_order": 44
+  },
+  {
+    "id": "a-03",
+    "category": "accessories",
+    "name_ar": "نظارات شمسية دائرية بإطار ذهبي UV400",
+    "name_en": "Gold-Frame Round Vintage Sunglasses",
+    "desc_ar": "نظارات شمسية ريترو بإطار معدني ذهبي رفيع وعدسات داكنة تحمي 100% من أشعة الشمس.",
+    "desc_en": "Featherweight gold-wire round vintage sunglasses fitted with dark UV400 protective lenses.",
+    "price_usd": 18,
+    "old_price_usd": null,
+    "badges": ["new"],
+    "sizes": ["One Size"],
+    "colors": [
+      { "name_ar": "ذهبي / عدسة داكنة", "name_en": "Gold / Smoke", "hex": "#C8A45C", "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&h=1000&q=85" },
+      { "name_ar": "أسود وايفارير", "name_en": "Matte Black", "hex": "#161618", "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=800&h=1000&q=85" }
+    ],
+    "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&h=1000&q=85",
+      "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.8,
+    "reviews_count": 43,
+    "created_order": 42
+  },
+  {
+    "id": "a-04",
+    "category": "accessories",
+    "name_ar": "حقيبة ظهر جلدية عنابية عملية",
+    "name_en": "Burgundy Everyday Faux-Leather Backpack",
+    "desc_ar": "حقيبة ظهر أنيقة بلون عنابي عميق مع جيب أمامي بسحّاب ومساحة واسعة للجامعة والعمل.",
+    "desc_en": "Spacious deep-burgundy textured backpack with front zip pocket and padded straps for campus or travel.",
+    "price_usd": 34,
+    "old_price_usd": 42,
+    "badges": ["sale"],
+    "sizes": ["One Size"],
+    "colors": [
+      { "name_ar": "عنابي", "name_en": "Wine Burgundy", "hex": "#70283B" },
+      { "name_ar": "أسود", "name_en": "Obsidian", "hex": "#1C1D20" }
+    ],
+    "image": "https://images.unsplash.com/photo-1622560480654-d96214fdc887?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1622560480654-d96214fdc887?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.8,
+    "reviews_count": 30,
+    "created_order": 37
+  },
+  {
+    "id": "a-05",
+    "category": "accessories",
+    "name_ar": "ساعة يد أنالوج نحيفة بإطار روز غولد",
+    "name_en": "Rose Gold & Taupe Minimalist Watch",
+    "desc_ar": "ساعة يد كلاسيكية نحيفة بميناء أبيض نقي وسوار جلد بلون رمادي دافئ لإطلالة راقية.",
+    "desc_en": "Ultra-slim rose-gold case analog watch paired with a soft taupe leather strap and clean white dial.",
+    "price_usd": 29,
+    "old_price_usd": null,
+    "badges": ["new"],
+    "sizes": ["One Size"],
+    "colors": [
+      { "name_ar": "روز غولد / توب", "name_en": "Rose Gold / Taupe", "hex": "#BFA392", "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=800&h=1000&q=85" },
+      { "name_ar": "أبيض مودرن", "name_en": "Pure White", "hex": "#EFEFEF", "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&h=1000&q=85" }
+    ],
+    "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=800&h=1000&q=85",
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 37,
+    "created_order": 41
+  },
+  {
+    "id": "a-06",
+    "category": "accessories",
+    "name_ar": "قلادة ذهبية مزدوجة بتعليقة هلال",
+    "name_en": "Gold Crescent Moon Layered Necklace",
+    "desc_ar": "سلسال نسائي مطلي بالذهب بطبقتين وتعليقة هلال مرصّعة لإضافة بريق ناعم لكل إطلالة.",
+    "desc_en": "Delicate double-strand gold-plated necklace adorned with a sparkling crescent moon pendant.",
+    "price_usd": 16,
+    "old_price_usd": null,
+    "badges": ["bestseller"],
+    "sizes": ["One Size"],
+    "colors": [
+      { "name_ar": "ذهبي", "name_en": "18K Gold Tone", "hex": "#D4AF37" }
+    ],
+    "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 46,
+    "created_order": 40
+  },
+  {
+    "id": "a-07",
+    "category": "accessories",
+    "name_ar": "أقراط كريستال زفير فاخرة للسهرات",
+    "name_en": "Sapphire Crystal Halo Drop Earrings",
+    "desc_ar": "أقراط متدلية مرصعة بحجر أزرق زفيري وهالة من الكريستال البراق لحضور ساحر في المناسبات.",
+    "desc_en": "Luminous drop earrings set with deep sapphire-blue center stones framed in sparkling crystal halos.",
+    "price_usd": 19,
+    "old_price_usd": 25,
+    "badges": ["sale"],
+    "sizes": ["One Size"],
+    "colors": [
+      { "name_ar": "فضي وزفير أزرق", "name_en": "Silver / Sapphire", "hex": "#1B4A8B" }
+    ],
+    "image": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.8,
+    "reviews_count": 24,
+    "created_order": 35
+  },
+  {
+    "id": "a-08",
+    "category": "accessories",
+    "name_ar": "وشاح شتوي مقلّم ناعم بشراشيب",
+    "name_en": "Striped Cashmere-Feel Fringe Scarf",
+    "desc_ar": "وشاح دافئ بملمس الكشمير الناعم وتقليمات عنابية وكحلية أنيقة مع شراشيب جانبية.",
+    "desc_en": "Cozy cashmere-feel woven winter scarf in rich burgundy and charcoal stripes finished with fringed ends.",
+    "price_usd": 15,
+    "old_price_usd": null,
+    "badges": ["new"],
+    "sizes": ["One Size"],
+    "colors": [
+      { "name_ar": "عنابي وكحلي", "name_en": "Burgundy Stripe", "hex": "#6C2B3B" }
+    ],
+    "image": "https://images.unsplash.com/photo-1609803384069-19f3e5a70e75?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1609803384069-19f3e5a70e75?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.8,
+    "reviews_count": 28,
+    "created_order": 36
+  },
+  {
+    "id": "a-09",
+    "category": "accessories",
+    "name_ar": "حزام جلد طبيعي بني بإبزيم معدني",
+    "name_en": "Saddle Brown Full-Grain Leather Belt",
+    "desc_ar": "حزام رجالي متين من الجلد الطبيعي البني مع إبزيم معدني مصقول يدوم لسنوات طويلة.",
+    "desc_en": "Full-grain distressed saddle-brown leather belt with brushed metal buckle built for jeans and tailored trousers.",
+    "price_usd": 17,
+    "old_price_usd": null,
+    "badges": ["bestseller"],
+    "sizes": ["90cm", "95cm", "100cm", "105cm", "110cm"],
+    "colors": [
+      { "name_ar": "بني كلاسيكي", "name_en": "Saddle Brown", "hex": "#8B4D2E" },
+      { "name_ar": "أسود", "name_en": "Jet Black", "hex": "#1B1B1D" }
+    ],
+    "image": "https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.9,
+    "reviews_count": 34,
+    "created_order": 33
+  },
+  {
+    "id": "a-10",
+    "category": "accessories",
+    "name_ar": "كاب بيسبول أبيض شبكي عصري",
+    "name_en": "Crisp White Mesh Baseball Cap",
+    "desc_ar": "كاب ستريت وير أبيض نقي بتصميم شبكي للتهوية وحزام خلفي قابل للتعديل لجميع المقاسات.",
+    "desc_en": "Clean white structured trucker baseball cap with breathable mesh back and adjustable snap closure.",
+    "price_usd": 12,
+    "old_price_usd": null,
+    "badges": ["new"],
+    "sizes": ["One Size"],
+    "colors": [
+      { "name_ar": "أبيض نقي", "name_en": "Crisp White", "hex": "#F5F5F5" }
+    ],
+    "image": "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.7,
+    "reviews_count": 23,
+    "created_order": 39
+  },
+  {
+    "id": "a-11",
+    "category": "accessories",
+    "name_ar": "قبعة شتوية محبوكة دافئة بألوان متعددة",
+    "name_en": "Ribbed Knit Winter Beanie Hat",
+    "desc_ar": "قبعة شتوية محبوكة بنعومة فائقة تضيف دفئاً وأناقة عصرية لإطلالات البرد.",
+    "desc_en": "Chunky ribbed-knit cuffed winter beanie available in warm seasonal tones for cozy everyday warmth.",
+    "price_usd": 13,
+    "old_price_usd": 17,
+    "badges": ["sale"],
+    "sizes": ["One Size"],
+    "colors": [
+      { "name_ar": "وردي دافئ", "name_en": "Dusty Rose", "hex": "#D4A3A8" },
+      { "name_ar": "فحمي", "name_en": "Charcoal", "hex": "#2F2B2A" },
+      { "name_ar": "زيتوني", "name_en": "Forest Olive", "hex": "#3B4A3E" },
+      { "name_ar": "خردلي", "name_en": "Mustard", "hex": "#E0B341" }
+    ],
+    "image": "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=800&h=1000&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=800&h=1000&q=85"
+    ],
+    "rating": 4.8,
+    "reviews_count": 31,
+    "created_order": 34
+  }
+];
