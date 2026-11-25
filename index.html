@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light" data-mood="all">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>مَدار | MADAR — متجر أزياء عصري في طرابلس، لبنان | توصيل لجميع المناطق</title>
+  <meta name="description" content="اكتشف أزياء مَدار (MADAR) في طرابلس، لبنان: ملابس رجالية، نسائية، أطفال، أحذية وإكسسوارات بأسعار مميزة وتوصيل سريع لجميع المناطق اللبنانية. اطلب عبر واتساب +961 71 074 246." />
+  <meta name="keywords" content="أزياء طرابلس, متجر ملابس لبنان, تسوق أونلاين لبنان, ملابس رجالية ونسائية وأطفال, MADAR Tripoli Lebanon, Lebanon clothing store, fashion Tripoli" />
+  <meta name="theme-color" content="#FF4D2E" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="مَدار | MADAR — Contemporary Fashion Store · Tripoli, Lebanon" />
+  <meta property="og:description" content="Bold, vibrant clothing for Men, Women, Kids, Shoes & Accessories with fast delivery across all regions of Lebanon." />
+  <meta property="og:image" content="assets/hero-editorial.jpg" />
+
+  <!-- Google Fonts: Cairo + Tajawal (Arabic) & Sora + Playfair Display (English Editorial) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Sora:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Inline SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111114'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23FF4D2E' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23F59E0B'/%3E%3C/svg%3E" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Redesigned Editorial Split-Curtain Splash Screen (Click anywhere to skip · Auto-exits ~1.25s · Hard failsafe 2.4s) -->
+  <div class="preloader" id="preloader" role="button" tabindex="0" aria-label="Skip intro splash">
+    <div class="preloader-curtain preloader-curtain-top" aria-hidden="true"></div>
+    <div class="preloader-curtain preloader-curtain-bottom" aria-hidden="true"></div>
+    <div class="preloader-orbs" aria-hidden="true">
+      <span class="pl-orb pl-orb-1"></span>
+      <span class="pl-orb pl-orb-2"></span>
+      <span class="pl-orb pl-orb-3"></span>
+    </div>
+    <div class="preloader-stage">
+      <div class="preloader-pill">
+        <span class="pl-pill-dot"></span>
+        <span>طرابلس · لبنان &nbsp;✦&nbsp; TRIPOLI · LEBANON</span>
+      </div>
+
+      <div class="preloader-mark" aria-label="MADAR مدار">
+        <span class="preloader-en" dir="ltr">
+          <span class="pl-letter" style="--i:0">M</span><span class="pl-letter" style="--i:1">A</span><span class="pl-letter" style="--i:2">D</span><span class="pl-letter" style="--i:3">A</span><span class="pl-letter" style="--i:4">R</span>
+        </span>
+        <span class="preloader-emblem" aria-hidden="true">
+          <span class="preloader-dot"></span>
+        </span>
+        <span class="preloader-ar" dir="rtl">
+          <span class="pl-ar-word">مَدار</span>
+        </span>
+      </div>
+
+      <div class="preloader-progress-wrap">
+        <div class="preloader-bar">
+          <span class="preloader-bar-fill" id="preloaderFill"></span>
+        </div>
+        <div class="preloader-meta">
+          <span class="preloader-tagline">EDITORIAL FASHION · ALL-LEBANON DELIVERY</span>
+          <span class="preloader-pct" id="preloaderPct" dir="ltr">0%</span>
+        </div>
+      </div>
+
+      <button type="button" class="preloader-skip" id="preloaderSkip">
+        <span>تخطي</span>
+        <span aria-hidden="true">·</span>
+        <span>Skip ↗</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Bulletproof Inline Splash Controller: never blocks on external scripts, fonts, or images -->
+  <script>
+    (function () {
+      var splash = document.getElementById('preloader');
+      if (!splash) return;
+      var fill = document.getElementById('preloaderFill');
+      var pctEl = document.getElementById('preloaderPct');
+      var dismissed = false;
+      var startTs = Date.now();
+      var duration = 1150; // Short, snappy 1.15s fill before split-curtain reveal
+      var rafId = null;
+
+      function finishHide() {
+        if (!splash) return;
+        splash.classList.add('is-gone');
+        splash.style.display = 'none';
+        splash.setAttribute('aria-hidden', 'true');
+      }
+
+      function dismissSplash(immediate) {
+        if (dismissed) return;
+        dismissed = true;
+        if (rafId) {
+          try { cancelAnimationFrame(rafId); } catch (e) {}
+        }
+        if (fill) fill.style.width = '100%';
+        if (pctEl) pctEl.textContent = '100%';
+        splash.classList.add('is-exiting');
+        if (immediate) {
+          setTimeout(finishHide, 420);
+        } else {
+          setTimeout(finishHide, 620);
+        }
+      }
+
+      window.MADAR_DISMISS_SPLASH = dismissSplash;
+
+      // Click anywhere on splash or press Skip / Escape to close immediately
+      splash.addEventListener('click', function () { dismissSplash(true); });
+      splash.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape') dismissSplash(true);
+      });
+
+      // Respect reduced motion for instant exit
+      var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reducedMotion) {
+        setTimeout(function () { dismissSplash(true); }, 120);
+      } else {
+        function animateBar() {
+          if (dismissed) return;
+          var elapsed = Date.now() - startTs;
+          var ratio = Math.min(1, elapsed / duration);
+          // Smooth ease-out cubic fill
+          var eased = 1 - Math.pow(1 - ratio, 3);
+          var pct = Math.round(eased * 100);
+          if (fill) fill.style.width = pct + '%';
+          if (pctEl) pctEl.textContent = pct + '%';
+          if (ratio < 1) {
+            rafId = requestAnimationFrame(animateBar);
+          } else {
+            setTimeout(function () { dismissSplash(false); }, 140);
+          }
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', function () {
+            startTs = Date.now();
+            rafId = requestAnimationFrame(animateBar);
+          }, { once: true });
+        } else {
+          rafId = requestAnimationFrame(animateBar);
+        }
+      }
+
+      // Hard failsafe: guaranteed dismissal within 2.4 seconds no matter what
+      setTimeout(function () { dismissSplash(true); }, 2300);
+      setTimeout(finishHide, 2800);
+    })();
+  </script>
+
+  <!-- Custom Desktop Cursor -->
+  <div class="custom-cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- Confetti / Sparkle Burst Canvas -->
+  <canvas id="sparkleCanvas" class="sparkle-canvas" aria-hidden="true"></canvas>
+
+  <!-- Top Utility Announcement Bar -->
+  <div class="top-ribbon">
+    <div class="container top-ribbon-inner">
+      <div class="ribbon-delivery">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span data-i18n="deliveryBadge">توصيل لجميع مناطق لبنان</span>
+        <span class="ribbon-sep" aria-hidden="true">•</span>
+        <span class="ribbon-free" data-i18n="freeDeliveryNote">توصيل مجاني للطلبات فوق $60</span>
+      </div>
+      <div class="ribbon-actions">
+        <button type="button" class="ribbon-link" id="openSizeGuideTop" data-i18n="sizeGuideBtn">دليل المقاسات</button>
+        <span class="ribbon-sep" aria-hidden="true">|</span>
+        <a href="tel:+96171074246" class="ribbon-link ribbon-phone" dir="ltr">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+961 71 074 246</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Morphing Editorial Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <!-- Left: Mobile menu button + Brand Wordmark -->
+      <div class="header-start">
+        <button type="button" class="icon-btn mobile-menu-btn" id="openMobileMenu" aria-label="Menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="17" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <a href="#home" class="brand-logo" aria-label="MADAR Home">
+          <span class="brand-emblem" aria-hidden="true"></span>
+          <span class="brand-text">
+            <span class="brand-wordmark" data-i18n="brandName">مَدار</span>
+            <span class="brand-sub" data-i18n="brandTag">طرابلس · لبنان</span>
+          </span>
+        </a>
+      </div>
+
+      <!-- Center: Desktop Nav -->
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="#home" class="nav-link" data-i18n="navHome">الرئيسية</a>
+        <a href="#categories" class="nav-link" data-i18n="navCategories">الأقسام</a>
+        <a href="#shop" class="nav-link" data-i18n="navShop">التسوّق</a>
+        <a href="#offers" class="nav-link nav-link-hot" data-i18n="navOffers">العروض</a>
+        <a href="#lookbook" class="nav-link" data-i18n="navLookbook">الإطلالات</a>
+        <a href="#delivery" class="nav-link" data-i18n="navDelivery">التوصيل</a>
+        <a href="#contact" class="nav-link" data-i18n="navContact">تواصل معنا</a>
+      </nav>
+
+      <!-- End: Language Toggle (AR | EN), Theme Toggle, Wishlist, Cart -->
+      <div class="header-actions">
+        <!-- Prominent Language Switcher visible on desktop & mobile -->
+        <div class="lang-toggle" role="group" aria-label="Language switch">
+          <button type="button" class="lang-btn active" data-lang-switch="ar" aria-pressed="true">عربي</button>
+          <button type="button" class="lang-btn" data-lang-switch="en" aria-pressed="false">EN</button>
+        </div>
+
+        <button type="button" class="icon-btn theme-btn" id="themeToggle" aria-label="Toggle Dark Mode">
+          <svg class="icon-moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+
+        <button type="button" class="icon-btn" id="openWishlistBtn" aria-label="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="badge-count" id="wishlistBadge">0</span>
+        </button>
+
+        <button type="button" class="icon-btn cart-trigger-btn" id="openCartBtn" aria-label="Shopping Bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="badge-count badge-accent" id="cartBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <!-- ==================== 1. FULL-SCREEN EDITORIAL HERO ==================== -->
+    <section class="hero" id="home">
+      <div class="hero-media" id="heroMedia">
+        <img src="assets/hero-editorial.jpg" alt="MADAR Fashion Editorial Campaign in Tripoli, Lebanon" class="hero-img" decoding="async" onerror="this.style.opacity='0'" />
+        <div class="hero-scrim" aria-hidden="true"></div>
+        <div class="hero-aurora" aria-hidden="true"></div>
+      </div>
+
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badges">
+            <span class="hero-delivery-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <span data-i18n="deliveryBadge">توصيل لجميع مناطق لبنان</span>
+            </span>
+            <span class="hero-eyebrow-pill" data-i18n="heroEyebrow">تشكيلة موسم 2026 · من قلب طرابلس إلى كل لبنان</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="hero-title-line" data-i18n="heroTitleLine1">أزياء تتجاوز</span>
+            <span class="hero-title-accent" data-i18n="heroTitleAccent">المألوف</span>
+            <span class="hero-title-line" data-i18n="heroTitleLine2">بجرأة وأناقة</span>
+          </h1>
+
+          <p class="hero-subtitle" data-i18n="heroSubtitle">
+            تصاميم مختارة للرجال، النساء والأطفال بألوان نابضة وجودة عالية، مع خدمة توصيل سريعة لباب منزلك في كافة المناطق اللبنانية.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#shop" class="btn btn-primary btn-lg">
+              <span data-i18n="heroShopCta">تسوّق التشكيلة</span>
+              <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <button type="button" class="btn btn-whatsapp btn-lg" id="heroWhatsappBtn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.391c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.984S17.547 2 12.031 2zm5.813 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.188.109-1.922-.125-.453-.141-1.031-.344-1.766-.656-3.094-1.328-5.109-4.453-5.266-4.656-.156-.203-1.266-1.688-1.266-3.219s.797-2.281 1.078-2.594c.281-.313.625-.391.828-.391s.422.016.609.016c.188 0 .453-.078.703.531.25.609.875 2.125.953 2.281.078.156.125.344.016.547-.094.203-.156.344-.313.516-.156.188-.328.406-.469.547-.156.156-.313.328-.141.641.188.313.813 1.344 1.75 2.172 1.203 1.078 2.219 1.406 2.531 1.563.313.156.5.125.688-.078.188-.219.797-.922 1-1.25.219-.313.422-.266.719-.156.297.109 1.875.891 2.203 1.047.313.156.531.234.609.375.078.141.078.813-.172 1.516z"/></svg>
+              <span data-i18n="heroWaCta">اطلب فوراً عبر واتساب</span>
+            </button>
+            <a href="tel:+96171074246" class="btn btn-glass btn-call-pill" aria-label="Call +961 71 074 246">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span data-i18n="callUs">اتصل بنا</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <strong data-i18n="heroStat1Num">+50</strong>
+              <span data-i18n="heroStat1Label">قطعة مختارة بعناية</span>
+            </div>
+            <div class="hero-stat">
+              <strong data-i18n="heroStat2Num">24-48h</strong>
+              <span data-i18n="heroStat2Label">توصيل لكل لبنان</span>
+            </div>
+            <div class="hero-stat">
+              <strong data-i18n="heroStat3Num">100%</strong>
+              <span data-i18n="heroStat3Label">تبديل سهل ومضمون</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Editorial Floating Spotlight Card -->
+        <aside class="hero-spotlight" id="heroSpotlight" aria-label="Featured Drop">
+          <div class="spotlight-tag" data-i18n="heroFloatingTag">وصل حديثاً · طرابلس</div>
+          <div class="spotlight-body" id="heroSpotlightBody">
+            <!-- Populated dynamically from products.json -->
+          </div>
+        </aside>
+      </div>
+
+      <a href="#categories" class="hero-scroll-cue">
+        <span data-i18n="heroScrollCue">اكتشف المزيد</span>
+        <span class="scroll-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ==================== KINETIC MARQUEE STRIP ==================== -->
+    <div class="marquee-section" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack">
+        <!-- Populated by JS in active language -->
+      </div>
+    </div>
+
+    <!-- ==================== 2. ASYMMETRIC CATEGORY SHOWCASE ==================== -->
+    <section class="section categories-section" id="categories">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow" data-i18n="catEyebrow">عالم الألوان والأسلوب</span>
+            <h2 class="section-title" data-i18n="catTitle">تسوّق حسب القسم</h2>
+          </div>
+          <p class="section-desc" data-i18n="catSubtitle">
+            لكل قسم هويته اللونية الخاصة — اختر قسمك المفضل لتتبدّل أجواء المتجر بالكامل.
+          </p>
+        </div>
+
+        <div class="categories-bento" id="categoriesBento">
+          <!-- Men -->
+          <button type="button" class="cat-card cat-card-lg cat-mood-men reveal" data-cat-jump="men">
+            <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=900&h=1100&q=85" alt="Men Fashion" loading="lazy" />
+            <div class="cat-card-overlay"></div>
+            <div class="cat-card-top">
+              <span class="cat-index">01</span>
+              <span class="cat-count" data-cat-count="men">10</span>
+            </div>
+            <div class="cat-card-content">
+              <h3 data-i18n="catMen">رجالي</h3>
+              <p data-i18n="catMenDesc">سترات جلدية، قمصان كتان، بليزرات وكاجوال عصري</p>
+              <span class="cat-cta"><span data-i18n="catExplore">استكشف القسم</span> ↗</span>
+            </div>
+          </button>
+
+          <!-- Women -->
+          <button type="button" class="cat-card cat-card-tall cat-mood-women reveal" data-cat-jump="women">
+            <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=900&h=1100&q=85" alt="Women Fashion" loading="lazy" />
+            <div class="cat-card-overlay"></div>
+            <div class="cat-card-top">
+              <span class="cat-index">02</span>
+              <span class="cat-count" data-cat-count="women">12</span>
+            </div>
+            <div class="cat-card-content">
+              <h3 data-i18n="catWomen">نسائي</h3>
+              <p data-i18n="catWomenDesc">فساتين صيفية وسهرة، معاطف وأزياء تحريرية جريئة</p>
+              <span class="cat-cta"><span data-i18n="catExplore">استكشف القسم</span> ↗</span>
+            </div>
+          </button>
+
+          <!-- Kids -->
+          <button type="button" class="cat-card cat-mood-kids reveal" data-cat-jump="kids">
+            <img src="assets/products/kids-floral-dress.jpg" alt="Kids Fashion" loading="lazy" />
+            <div class="cat-card-overlay"></div>
+            <div class="cat-card-top">
+              <span class="cat-index">03</span>
+              <span class="cat-count" data-cat-count="kids">8</span>
+            </div>
+            <div class="cat-card-content">
+              <h3 data-i18n="catKids">أطفال</h3>
+              <p data-i18n="catKidsDesc">ملابس مريحة ومبهجة بأجود الأقطان للأطفال</p>
+              <span class="cat-cta"><span data-i18n="catExplore">استكشف القسم</span> ↗</span>
+            </div>
+          </button>
+
+          <!-- Shoes -->
+          <button type="button" class="cat-card cat-mood-shoes reveal" data-cat-jump="shoes">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&h=900&q=85" alt="Shoes" loading="lazy" />
+            <div class="cat-card-overlay"></div>
+            <div class="cat-card-top">
+              <span class="cat-index">04</span>
+              <span class="cat-count" data-cat-count="shoes">9</span>
+            </div>
+            <div class="cat-card-content">
+              <h3 data-i18n="catShoes">أحذية</h3>
+              <p data-i18n="catShoesDesc">سنيكرز عصرية، بوتات جلدية وأحذية مناسبات</p>
+              <span class="cat-cta"><span data-i18n="catExplore">استكشف القسم</span> ↗</span>
+            </div>
+          </button>
+
+          <!-- Accessories -->
+          <button type="button" class="cat-card cat-mood-accessories reveal" data-cat-jump="accessories">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&h=900&q=85" alt="Accessories" loading="lazy" />
+            <div class="cat-card-overlay"></div>
+            <div class="cat-card-top">
+              <span class="cat-index">05</span>
+              <span class="cat-count" data-cat-count="accessories">11</span>
+            </div>
+            <div class="cat-card-content">
+              <h3 data-i18n="catAccessories">إكسسوارات</h3>
+              <p data-i18n="catAccessoriesDesc">حقائب جلدية، نظارات شمسية، ساعات ومجوهرات</p>
+              <span class="cat-cta"><span data-i18n="catExplore">استكشف القسم</span> ↗</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. INTERACTIVE STOREFRONT CATALOG ==================== -->
+    <section class="section shop-section" id="shop">
+      <div class="container">
+        <div class="shop-header reveal">
+          <div>
+            <span class="eyebrow" data-i18n="shopEyebrow">تشكيلة مَدار الكاملة</span>
+            <h2 class="section-title" data-i18n="shopTitle">اختر إطلالتك القادمة</h2>
+          </div>
+
+          <!-- Merchandising Tabs -->
+          <div class="shop-tabs" role="tablist" aria-label="Product collections">
+            <button type="button" class="shop-tab active" data-tab="all" role="tab" aria-selected="true" data-i18n="tabAll">جميع المنتجات</button>
+            <button type="button" class="shop-tab" data-tab="new" role="tab" aria-selected="false" data-i18n="tabNew">وصل حديثاً</button>
+            <button type="button" class="shop-tab" data-tab="bestseller" role="tab" aria-selected="false" data-i18n="tabBestseller">الأكثر مبيعاً</button>
+            <button type="button" class="shop-tab shop-tab-sale" data-tab="sale" role="tab" aria-selected="false" data-i18n="tabSale">تخفيضات 🔥</button>
+          </div>
+        </div>
+
+        <!-- Color-Shifting Category Mood Pills -->
+        <div class="mood-pills-wrap reveal">
+          <div class="mood-pills" id="categoryPills" role="group" aria-label="Category filter">
+            <button type="button" class="mood-pill active" data-category="all" data-i18n="catAll">الكل</button>
+            <button type="button" class="mood-pill" data-category="men" data-i18n="catMen">رجالي</button>
+            <button type="button" class="mood-pill" data-category="women" data-i18n="catWomen">نسائي</button>
+            <button type="button" class="mood-pill" data-category="kids" data-i18n="catKids">أطفال</button>
+            <button type="button" class="mood-pill" data-category="shoes" data-i18n="catShoes">أحذية</button>
+            <button type="button" class="mood-pill" data-category="accessories" data-i18n="catAccessories">إكسسوارات</button>
+          </div>
+        </div>
+
+        <!-- Search, Price Slider & Sort Control Bar -->
+        <div class="filter-bar reveal">
+          <div class="search-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="search" id="searchInput" data-i18n-placeholder="searchPlaceholder" placeholder="ابحث عن جاكيت، فستان، حذاء..." aria-label="Search products" />
+            <button type="button" class="search-clear" id="searchClear" aria-label="Clear search" hidden>×</button>
+          </div>
+
+          <div class="price-filter">
+            <div class="price-filter-head">
+              <label for="priceRange" data-i18n="filterPriceMax">السعر الأقصى</label>
+              <span class="price-filter-val" id="priceRangeValue">$80</span>
+            </div>
+            <input type="range" id="priceRange" min="12" max="80" step="2" value="80" />
+          </div>
+
+          <div class="sort-box">
+            <label for="sortSelect" class="sr-only" data-i18n="sortLabel">الترتيب</label>
+            <select id="sortSelect" aria-label="Sort products">
+              <option value="featured" data-i18n="sortFeatured">المميزة أولاً</option>
+              <option value="newest" data-i18n="sortNewest">الأحدث وصولاً</option>
+              <option value="price-asc" data-i18n="sortPriceAsc">السعر: من الأقل للأعلى</option>
+              <option value="price-desc" data-i18n="sortPriceDesc">السعر: من الأعلى للأقل</option>
+            </select>
+          </div>
+
+          <button type="button" class="btn btn-outline btn-sm" id="openSizeGuideShop">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 6H3"/><path d="M21 18H3"/><path d="M3 6v12"/><path d="M21 6v12"/><path d="M7 6v4"/><path d="M11 6v6"/><path d="M15 6v4"/><path d="M19 6v6"/></svg>
+            <span data-i18n="sizeGuideBtn">دليل المقاسات</span>
+          </button>
+        </div>
+
+        <div class="results-meta">
+          <div class="results-count-wrap">
+            <strong id="resultsNumber">50</strong>
+            <span data-i18n="resultsCount">منتج متوفر</span>
+          </div>
+          <button type="button" class="link-reset" id="resetFiltersBtn" hidden data-i18n="resetFilters">إعادة ضبط الفلاتر</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="products-grid" id="productsGrid" aria-live="polite">
+          <!-- Rendered dynamically from data/products.json -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-catalog" id="emptyCatalog" hidden>
+          <div class="empty-icon">✦</div>
+          <h3 data-i18n="noResultsTitle">لم نجد منتجات مطابقة لبحثك</h3>
+          <p data-i18n="noResultsDesc">جرّب تغيير كلمات البحث أو رفع سقف السعر أو استعراض جميع الأقسام.</p>
+          <button type="button" class="btn btn-primary" id="emptyResetBtn" data-i18n="resetFilters">إعادة ضبط الفلاتر</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. SPECIAL OFFERS & COUNTDOWN BANNER ==================== -->
+    <section class="section sale-banner-section" id="offers">
+      <div class="container">
+        <div class="sale-banner reveal">
+          <div class="sale-banner-bg" aria-hidden="true"></div>
+          <div class="sale-banner-content">
+            <span class="sale-pill" data-i18n="saleEyebrow">عرض موسمي حصري لفترة محدودة</span>
+            <h2 class="sale-title" data-i18n="saleTitle">خصومات تصل حتى 35%</h2>
+            <p class="sale-subtitle" data-i18n="saleSubtitle">
+              على مختارات الجاكيتات، الفساتين، الأحذية والإكسسوارات — مع توصيل سريع لكل المناطق اللبنانية.
+            </p>
+
+            <div class="countdown" id="saleCountdown" aria-label="Offer Countdown">
+              <div class="cd-box">
+                <strong id="cdDays">02</strong>
+                <span data-i18n="cdDays">يوم</span>
+              </div>
+              <div class="cd-sep">:</div>
+              <div class="cd-box">
+                <strong id="cdHours">23</strong>
+                <span data-i18n="cdHours">ساعة</span>
+              </div>
+              <div class="cd-sep">:</div>
+              <div class="cd-box">
+                <strong id="cdMins">45</strong>
+                <span data-i18n="cdMins">دقيقة</span>
+              </div>
+              <div class="cd-sep">:</div>
+              <div class="cd-box">
+                <strong id="cdSecs">12</strong>
+                <span data-i18n="cdSecs">ثانية</span>
+              </div>
+            </div>
+
+            <div class="sale-actions">
+              <button type="button" class="btn btn-dark btn-lg" id="jumpToSaleBtn" data-i18n="saleCta">تسوّق العروض الآن</button>
+              <button type="button" class="btn btn-glass-light btn-lg" id="saleWhatsappBtn" data-i18n="saleWaCta">استفسر عبر واتساب</button>
+            </div>
+          </div>
+
+          <div class="sale-banner-visual">
+            <div class="sale-collage">
+              <img class="sale-img-1" src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=600&h=750&q=85" alt="Scarlet Evening Dress on Sale" loading="lazy" />
+              <img class="sale-img-2" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&h=600&q=85" alt="Crimson Sneakers on Sale" loading="lazy" />
+              <div class="sale-sticker">-35%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. EDITORIAL LOOKBOOK GALLERY ==================== -->
+    <section class="section lookbook-section" id="lookbook">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow" data-i18n="lookEyebrow">عدسة مَدار · #MADAR_TRIPOLI</span>
+            <h2 class="section-title" data-i18n="lookTitle">معرض الإطلالات</h2>
+          </div>
+          <p class="section-desc" data-i18n="lookSubtitle">
+            تنسيقات مستوحاة من شوارع الميناء وطرابلس وبيروت — اضغط على أي إطلالة لتسوّق القطعة مباشرة.
+          </p>
+        </div>
+
+        <div class="lookbook-grid" id="lookbookGrid">
+          <!-- Rendered dynamically with translated captions & quick-view triggers -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. WHY CHOOSE US ==================== -->
+    <section class="section why-section" id="why-us">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow" data-i18n="whyEyebrow">لماذا مَدار؟</span>
+            <h2 class="section-title" data-i18n="whyTitle">تجربة تسوّق تليق بذوقك</h2>
+          </div>
+        </div>
+
+        <div class="why-grid" id="whyGrid">
+          <!-- Rendered dynamically in active language -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. CUSTOMER REVIEWS CAROUSEL ==================== -->
+    <section class="section reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow" data-i18n="reviewsEyebrow">ثقة زبائننا في كل لبنان</span>
+            <h2 class="section-title" data-i18n="reviewsTitle">آراء وتجارب العملاء</h2>
+          </div>
+          <div class="carousel-controls">
+            <button type="button" class="icon-btn carousel-btn" id="reviewsPrev" aria-label="Previous review">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button type="button" class="icon-btn carousel-btn" id="reviewsNext" aria-label="Next review">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="reviews-track" id="reviewsTrack">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. DELIVERY ACROSS ALL LEBANON ==================== -->
+    <section class="section delivery-section" id="delivery">
+      <div class="container">
+        <div class="delivery-card reveal">
+          <div class="delivery-info">
+            <span class="eyebrow" data-i18n="deliveryEyebrow">تغطية شاملة من الشمال إلى الجنوب</span>
+            <h2 class="section-title" data-i18n="deliveryTitle">توصيل لجميع المناطق اللبنانية</h2>
+            <p class="section-desc" data-i18n="deliverySubtitle">
+              اختر منطقتك لمعرفة مدة التوصيل وكلفة الشحن فوراً — والدفع نقداً عند الاستلام بالدولار أو بالليرة اللبنانية.
+            </p>
+
+            <div class="region-selector-box">
+              <label for="deliveryRegionSelect" data-i18n="deliverySelectLabel">اختر منطقتك في لبنان</label>
+              <select id="deliveryRegionSelect" class="region-select">
+                <!-- Populated dynamically -->
+              </select>
+            </div>
+
+            <div class="region-pills" id="deliveryRegionPills">
+              <!-- Quick-click region pills -->
+            </div>
+          </div>
+
+          <div class="delivery-summary-panel" id="deliverySummaryPanel">
+            <div class="delivery-badge-lg">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <span id="selectedRegionName">طرابلس والميناء والشمال</span>
+            </div>
+
+            <div class="delivery-metrics">
+              <div class="delivery-metric">
+                <span data-i18n="deliveryEtaLabel">مدة التوصيل المتوقعة</span>
+                <strong id="selectedRegionEta">نفس اليوم — 24 ساعة</strong>
+              </div>
+              <div class="delivery-metric">
+                <span data-i18n="deliveryFeeLabel">كلفة التوصيل</span>
+                <strong id="selectedRegionFee">$2 — 179,000 ل.ل</strong>
+              </div>
+            </div>
+
+            <div class="delivery-perks">
+              <div class="perk-chip">✓ <span data-i18n="deliveryFreeLabel">مجاني للطلبات فوق $60</span></div>
+              <div class="perk-chip">✓ <span data-i18n="deliveryCodNote">الدفع عند الاستلام (USD أو ل.ل)</span></div>
+            </div>
+
+            <div class="exchange-pill">
+              <span data-i18n="deliveryExchangeNote">سعر الصرف المعتمد حالياً:</span>
+              <strong id="exchangeRateBadge" dir="ltr">1$ = 89,500 L.L</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 9. CONTACT & TRIPOLI LOCATION ==================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-grid reveal">
+          <div class="contact-details">
+            <span class="eyebrow" data-i18n="contactEyebrow">زورونا أو اطلبوا أونلاين</span>
+            <h2 class="section-title" data-i18n="contactTitle">تواصل مع مَدار — طرابلس</h2>
+            <p class="section-desc" data-i18n="contactSubtitle">
+              متجرنا في قلب طرابلس، لبنان يستقبلكم يومياً، كما نلبي جميع طلباتكم فوراً عبر واتساب والاتصال المباشر.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div>
+                  <span class="contact-label" data-i18n="contactPhoneLabel">هاتف وواتساب الطلبات</span>
+                  <a href="tel:+96171074246" class="contact-val" dir="ltr">+961 71 074 246</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div>
+                  <span class="contact-label" data-i18n="contactLocLabel">الموقع</span>
+                  <strong class="contact-val" data-i18n="contactLocValue">طرابلس — شارع عزمي / الضم والفرز، لبنان</strong>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">🕒</div>
+                <div>
+                  <span class="contact-label" data-i18n="contactHoursLabel">أوقات الدوام</span>
+                  <strong class="contact-val" data-i18n="contactHoursValue">الاثنين – السبت: 10:00 صباحاً – 9:00 مساءً</strong>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">🚚</div>
+                <div>
+                  <span class="contact-label" data-i18n="contactDeliveryLabel">التوصيل</span>
+                  <strong class="contact-val" data-i18n="contactDeliveryValue">شحن وتوصيل لجميع المناطق اللبنانية</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-ctas">
+              <button type="button" class="btn btn-whatsapp btn-lg" id="contactWhatsappBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.391c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.984S17.547 2 12.031 2zm5.813 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.188.109-1.922-.125-.453-.141-1.031-.344-1.766-.656-3.094-1.328-5.109-4.453-5.266-4.656-.156-.203-1.266-1.688-1.266-3.219s.797-2.281 1.078-2.594c.281-.313.625-.391.828-.391s.422.016.609.016c.188 0 .453-.078.703.531.25.609.875 2.125.953 2.281.078.156.125.344.016.547-.094.203-.156.344-.313.516-.156.188-.328.406-.469.547-.156.156-.313.328-.141.641.188.313.813 1.344 1.75 2.172 1.203 1.078 2.219 1.406 2.531 1.563.313.156.5.125.688-.078.188-.219.797-.922 1-1.25.219-.313.422-.266.719-.156.297.109 1.875.891 2.203 1.047.313.156.531.234.609.375.078.141.078.813-.172 1.516z"/></svg>
+                <span data-i18n="contactWaBtn">راسلنا على واتساب</span>
+              </button>
+              <a href="tel:+96171074246" class="btn btn-primary btn-lg">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span data-i18n="contactCallBtn">اتصل الآن</span>
+              </a>
+            </div>
+
+            <div class="social-row">
+              <a href="https://wa.me/96171074246" target="_blank" rel="noopener" class="social-chip">WhatsApp</a>
+              <a href="#lookbook" class="social-chip">Instagram @madar.tripoli</a>
+              <a href="#lookbook" class="social-chip">TikTok @madar.lb</a>
+            </div>
+          </div>
+
+          <div class="contact-map-wrap">
+            <div class="map-header-pill">
+              <span class="pulse-dot"></span>
+              <span>Tripoli, Lebanon · طرابلس، لبنان</span>
+            </div>
+            <iframe
+              title="MADAR Store Location in Tripoli, Lebanon"
+              class="tripoli-map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=35.8150%2C34.4150%2C35.8750%2C34.4550&amp;layer=mapnik&amp;marker=34.4367%2C35.8497"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 10. EDITORIAL FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <div class="footer-wordmark">
+            <span data-i18n="brandName">مَدار</span>
+            <span class="footer-wordmark-dot"></span>
+          </div>
+          <p class="footer-desc" data-i18n="footerDesc">
+            علامة أزياء عصرية من طرابلس، لبنان تجمع بين الجرأة التحريرية، الألوان النابضة، والأسعار المناسبة للسوق اللبناني مع توصيل شامل لكل المناطق.
+          </p>
+          <div class="footer-delivery-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <span data-i18n="deliveryBadge">توصيل لجميع مناطق لبنان</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footerQuickLinks">روابط سريعة</h4>
+          <ul>
+            <li><a href="#home" data-i18n="navHome">الرئيسية</a></li>
+            <li><a href="#shop" data-i18n="navShop">التسوّق</a></li>
+            <li><a href="#offers" data-i18n="navOffers">العروض</a></li>
+            <li><a href="#lookbook" data-i18n="navLookbook">الإطلالات</a></li>
+            <li><a href="#delivery" data-i18n="navDelivery">التوصيل</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footerCategories">الأقسام</h4>
+          <ul>
+            <li><button type="button" class="footer-cat-link" data-cat-jump="men" data-i18n="catMen">رجالي</button></li>
+            <li><button type="button" class="footer-cat-link" data-cat-jump="women" data-i18n="catWomen">نسائي</button></li>
+            <li><button type="button" class="footer-cat-link" data-cat-jump="kids" data-i18n="catKids">أطفال</button></li>
+            <li><button type="button" class="footer-cat-link" data-cat-jump="shoes" data-i18n="catShoes">أحذية</button></li>
+            <li><button type="button" class="footer-cat-link" data-cat-jump="accessories" data-i18n="catAccessories">إكسسوارات</button></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footerContact">تواصل مباشر</h4>
+          <ul>
+            <li><a href="tel:+96171074246" dir="ltr">+961 71 074 246</a></li>
+            <li><span data-i18n="contactLocValue">طرابلس — شارع عزمي / الضم والفرز، لبنان</span></li>
+            <li><button type="button" class="footer-cat-link" id="footerSizeGuideBtn" data-i18n="sizeGuideBtn">دليل المقاسات</button></li>
+          </ul>
+          <div class="footer-lang-wrap">
+            <div class="lang-toggle" role="group" aria-label="Footer language switch">
+              <button type="button" class="lang-btn active" data-lang-switch="ar">عربي</button>
+              <button type="button" class="lang-btn" data-lang-switch="en">EN</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footerRights">© 2026 مَدار (MADAR) — طرابلس، لبنان. جميع الحقوق محفوظة.</p>
+        <div class="footer-bottom-links">
+          <a href="tel:+96171074246" data-i18n="callUs">اتصل بنا</a>
+          <span>•</span>
+          <button type="button" class="footer-wa-inline" id="footerWaBtn" data-i18n="whatsappOrder">اطلب عبر واتساب</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MOBILE NAVIGATION DRAWER ==================== -->
+  <div class="drawer-backdrop" id="mobileMenuBackdrop" hidden></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true" aria-label="Mobile Navigation">
+    <div class="drawer-head">
+      <div class="brand-logo">
+        <span class="brand-emblem"></span>
+        <span class="brand-wordmark" data-i18n="brandName">مَدار</span>
+      </div>
+      <button type="button" class="icon-btn" id="closeMobileMenu" aria-label="Close Menu">✕</button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="#home" data-i18n="navHome">الرئيسية</a>
+      <a href="#categories" data-i18n="navCategories">الأقسام</a>
+      <a href="#shop" data-i18n="navShop">التسوّق</a>
+      <a href="#offers" data-i18n="navOffers">العروض</a>
+      <a href="#lookbook" data-i18n="navLookbook">الإطلالات</a>
+      <a href="#delivery" data-i18n="navDelivery">التوصيل</a>
+      <a href="#contact" data-i18n="navContact">تواصل معنا</a>
+    </nav>
+    <div class="mobile-nav-footer">
+      <div class="mobile-delivery-note" data-i18n="deliveryBadge">توصيل لجميع مناطق لبنان</div>
+      <a href="tel:+96171074246" class="btn btn-outline btn-full" dir="ltr">📞 +961 71 074 246</a>
+      <button type="button" class="btn btn-whatsapp btn-full" id="mobileMenuWaBtn" data-i18n="whatsappOrder">اطلب عبر واتساب</button>
+    </div>
+  </aside>
+
+  <!-- ==================== SHOPPING CART DRAWER (BOTTOM SHEET ON MOBILE) ==================== -->
+  <div class="drawer-backdrop" id="cartBackdrop" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle">
+    <div class="drawer-drag-handle" aria-hidden="true"><span></span></div>
+    <div class="drawer-head">
+      <h3 id="cartDrawerTitle">
+        <span data-i18n="cartTitle">سلة التسوق</span>
+        <span class="drawer-count" id="cartDrawerCount">(0)</span>
+      </h3>
+      <div class="drawer-head-actions">
+        <button type="button" class="link-reset" id="clearCartBtn" hidden data-i18n="clearCart">إفراغ السلة</button>
+        <button type="button" class="icon-btn" id="closeCartBtn" aria-label="Close Cart">✕</button>
+      </div>
+    </div>
+
+    <div class="cart-body" id="cartBody">
+      <!-- Empty state or cart items + WhatsApp checkout form -->
+      <div class="cart-empty" id="cartEmpty">
+        <div class="empty-icon">🛍️</div>
+        <h4 data-i18n="cartEmptyTitle">سلة التسوق فارغة حالياً</h4>
+        <p data-i18n="cartEmptyDesc">استكشف تشكيلة مَدار وأضف قطعك المفضلة لتأكيد طلبك عبر واتساب.</p>
+      </div>
+
+      <div class="cart-items" id="cartItems"></div>
+
+      <!-- Checkout Totals & WhatsApp Order Form -->
+      <div class="cart-checkout-wrap" id="cartCheckoutWrap" hidden>
+        <div class="cart-totals">
+          <div class="total-row">
+            <span data-i18n="cartSubtotal">المجموع الفرعي</span>
+            <strong id="cartSubtotalDisplay">$0 — 0 ل.ل</strong>
+          </div>
+          <div class="total-row">
+            <span data-i18n="cartDelivery">التوصيل</span>
+            <strong id="cartDeliveryDisplay">$2 — 179,000 ل.ل</strong>
+          </div>
+          <div class="total-row total-grand">
+            <span data-i18n="cartTotal">الإجمالي المطلوب</span>
+            <div class="grand-dual">
+              <strong id="cartTotalUsd">$0</strong>
+              <span id="cartTotalLbp">0 ل.ل</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="checkout-form" id="checkoutForm" novalidate>
+          <h4 class="checkout-heading" data-i18n="checkoutHeading">بيانات التوصيل لتأكيد الطلب</h4>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="custName" data-i18n="fieldName">الاسم الكامل *</label>
+              <input type="text" id="custName" required data-i18n-placeholder="fieldNamePh" placeholder="مثال: سارة الأحمد" />
+            </div>
+            <div class="form-field">
+              <label for="custPhone" data-i18n="fieldPhone">رقم الهاتف / واتساب *</label>
+              <input type="tel" id="custPhone" required data-i18n-placeholder="fieldPhonePh" placeholder="مثال: 71 123 456" />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="custRegion" data-i18n="fieldRegion">المنطقة في لبنان *</label>
+            <select id="custRegion" required></select>
+          </div>
+
+          <div class="form-field">
+            <label for="custAddress" data-i18n="fieldAddress">العنوان بالتفصيل *</label>
+            <input type="text" id="custAddress" required data-i18n-placeholder="fieldAddressPh" placeholder="الشارع، البناية، الطابق، معلم قريب..." />
+          </div>
+
+          <div class="form-field">
+            <label for="custNotes" data-i18n="fieldNotes">ملاحظات إضافية (اختياري)</label>
+            <input type="text" id="custNotes" data-i18n-placeholder="fieldNotesPh" placeholder="وقت التوصيل المفضل أو أي تفاصيل..." />
+          </div>
+
+          <p class="form-error" id="checkoutError" hidden></p>
+
+          <button type="submit" class="btn btn-whatsapp btn-lg btn-full">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.391c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.984S17.547 2 12.031 2zm5.813 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.188.109-1.922-.125-.453-.141-1.031-.344-1.766-.656-3.094-1.328-5.109-4.453-5.266-4.656-.156-.203-1.266-1.688-1.266-3.219s.797-2.281 1.078-2.594c.281-.313.625-.391.828-.391s.422.016.609.016c.188 0 .453-.078.703.531.25.609.875 2.125.953 2.281.078.156.125.344.016.547-.094.203-.156.344-.313.516-.156.188-.328.406-.469.547-.156.156-.313.328-.141.641.188.313.813 1.344 1.75 2.172 1.203 1.078 2.219 1.406 2.531 1.563.313.156.5.125.688-.078.188-.219.797-.922 1-1.25.219-.313.422-.266.719-.156.297.109 1.875.891 2.203 1.047.313.156.531.234.609.375.078.141.078.813-.172 1.516z"/></svg>
+            <span data-i18n="checkoutSubmitWa">تأكيد الطلب عبر واتساب</span>
+          </button>
+
+          <a href="tel:+96171074246" class="checkout-call-alt">
+            📞 <span data-i18n="checkoutCallAlt">أو اتصل مباشرة لتأكيد الطلب</span> (<span dir="ltr">+961 71 074 246</span>)
+          </a>
+        </form>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== WISHLIST DRAWER ==================== -->
+  <div class="drawer-backdrop" id="wishlistBackdrop" hidden></div>
+  <aside class="wishlist-drawer" id="wishlistDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="wishlistDrawerTitle">
+    <div class="drawer-drag-handle" aria-hidden="true"><span></span></div>
+    <div class="drawer-head">
+      <h3 id="wishlistDrawerTitle">
+        <span data-i18n="wishlistTitle">المفضلة</span>
+        <span class="drawer-count" id="wishlistDrawerCount">(0)</span>
+      </h3>
+      <button type="button" class="icon-btn" id="closeWishlistBtn" aria-label="Close Wishlist">✕</button>
+    </div>
+    <div class="wishlist-body">
+      <div class="cart-empty" id="wishlistEmpty">
+        <div class="empty-icon">❤️</div>
+        <h4 data-i18n="wishlistEmptyTitle">قائمة المفضلة فارغة</h4>
+        <p data-i18n="wishlistEmptyDesc">اضغط على أيقونة القلب لحفظ القطع التي تعجبك والعودة إليها لاحقاً.</p>
+      </div>
+      <div class="wishlist-items" id="wishlistItems"></div>
+    </div>
+  </aside>
+
+  <!-- ==================== QUICK VIEW PRODUCT MODAL ==================== -->
+  <div class="modal-backdrop" id="quickViewBackdrop" hidden></div>
+  <div class="modal quickview-modal" id="quickViewModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="qvTitle">
+    <button type="button" class="modal-close" id="closeQuickView" aria-label="Close Quick View">✕</button>
+    <div class="qv-grid" id="qvContent">
+      <!-- Populated dynamically on product click -->
+    </div>
+  </div>
+
+  <!-- ==================== SIZE GUIDE MODAL ==================== -->
+  <div class="modal-backdrop" id="sizeGuideBackdrop" hidden></div>
+  <div class="modal sizeguide-modal" id="sizeGuideModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="sgTitle">
+    <button type="button" class="modal-close" id="closeSizeGuide" aria-label="Close Size Guide">✕</button>
+    <div class="sg-head">
+      <h3 id="sgTitle" data-i18n="sgTitle">دليل المقاسات — مَدار</h3>
+      <p data-i18n="sgSubtitle">قياسات دقيقة بالسنتيمتر (سم) لمساعدتك في اختيار المقاس المثالي.</p>
+    </div>
+    <div class="sg-tabs" role="tablist">
+      <button type="button" class="sg-tab active" data-sg-tab="adults" data-i18n="sgTabAdults">ملابس رجالي ونسائي</button>
+      <button type="button" class="sg-tab" data-sg-tab="kids" data-i18n="sgTabKids">ملابس الأطفال</button>
+      <button type="button" class="sg-tab" data-sg-tab="shoes" data-i18n="sgTabShoes">الأحذية (EU)</button>
+    </div>
+    <div class="sg-table-wrap" id="sgTableWrap">
+      <!-- Populated dynamically -->
+    </div>
+    <div class="sg-footer">
+      <button type="button" class="btn btn-whatsapp btn-sm" id="sgWhatsappBtn" data-i18n="sgHelpWa">غير متأكد من مقاسك؟ اسألنا عبر واتساب</button>
+    </div>
+  </div>
+
+  <!-- ==================== MOBILE BOTTOM NAVIGATION ==================== -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Quick Navigation">
+    <a href="#home" class="mob-nav-item active" data-mob-nav="home">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      <span data-i18n="mobHome">الرئيسية</span>
+    </a>
+    <a href="#shop" class="mob-nav-item" data-mob-nav="shop">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span data-i18n="mobShop">المتجر</span>
+    </a>
+    <button type="button" class="mob-nav-item" id="mobWishlistBtn">
+      <span class="mob-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <em class="mob-badge" id="mobWishlistBadge">0</em>
+      </span>
+      <span data-i18n="mobWishlist">المفضلة</span>
+    </button>
+    <button type="button" class="mob-nav-item" id="mobCartBtn">
+      <span class="mob-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <em class="mob-badge mob-badge-accent" id="mobCartBadge">0</em>
+      </span>
+      <span data-i18n="mobCart">السلة</span>
+    </button>
+    <button type="button" class="mob-nav-item mob-nav-wa" id="mobWaBtn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.391c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.984S17.547 2 12.031 2zm5.813 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.188.109-1.922-.125-.453-.141-1.031-.344-1.766-.656-3.094-1.328-5.109-4.453-5.266-4.656-.156-.203-1.266-1.688-1.266-3.219s.797-2.281 1.078-2.594c.281-.313.625-.391.828-.391s.422.016.609.016c.188 0 .453-.078.703.531.25.609.875 2.125.953 2.281.078.156.125.344.016.547-.094.203-.156.344-.313.516-.156.188-.328.406-.469.547-.156.156-.313.328-.141.641.188.313.813 1.344 1.75 2.172 1.203 1.078 2.219 1.406 2.531 1.563.313.156.5.125.688-.078.188-.219.797-.922 1-1.25.219-.313.422-.266.719-.156.297.109 1.875.891 2.203 1.047.313.156.531.234.609.375.078.141.078.813-.172 1.516z"/></svg>
+      <span data-i18n="mobWa">واتساب</span>
+    </button>
+  </nav>
+
+  <!-- Floating WhatsApp FAB & Back-to-Top -->
+  <div class="floating-controls">
+    <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top" hidden>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+    <button type="button" class="wa-fab" id="floatingWaBtn" aria-label="Order on WhatsApp">
+      <span class="wa-fab-pulse" aria-hidden="true"></span>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.391c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.984S17.547 2 12.031 2zm5.813 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.188.109-1.922-.125-.453-.141-1.031-.344-1.766-.656-3.094-1.328-5.109-4.453-5.266-4.656-.156-.203-1.266-1.688-1.266-3.219s.797-2.281 1.078-2.594c.281-.313.625-.391.828-.391s.422.016.609.016c.188 0 .453-.078.703.531.25.609.875 2.125.953 2.281.078.156.125.344.016.547-.094.203-.156.344-.313.516-.156.188-.328.406-.469.547-.156.156-.313.328-.141.641.188.313.813 1.344 1.75 2.172 1.203 1.078 2.219 1.406 2.531 1.563.313.156.5.125.688-.078.188-.219.797-.922 1-1.25.219-.313.422-.266.719-.156.297.109 1.875.891 2.203 1.047.313.156.531.234.609.375.078.141.078.813-.172 1.516z"/></svg>
+    </button>
+  </div>
+
+  <!-- Toast Notification Stack -->
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+  <!-- Classic Scripts (zero ES modules, zero fetch CORS — works directly via file:// double-click) -->
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/products-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
